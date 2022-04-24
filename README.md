@@ -1,18 +1,12 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-# Balboa Spa Client integration for home-assistant
-Home assistant integration for a spa equipped with a Balboa BP system and a
-bwa™ Wi-Fi Module (50350).
+# Sundance Jaccuzi Spa Client integration for home-assistant
+Home assistant integration for a Sundance 780 series and other Jaccuzi products equipped w and a
+RS-485 to TCP COTS module.
 
 ## Configuration
 
-There is a config flow for the spa.  After installing, 
-go to integrations in HACS, hit + to setup a new integration, search for "Balboa Spa Client",
-select that, and add the IP address or hostname of your spa's wifi adapter.
-
-If you have a blower, it will be listed as a "fan" in the climate device for
-the spa.  Currently the code assumes you have a 3-speed blower, if you only
-have a 1-speed, only use LOW and OFF.
+TBD
 
 ## Screenshots
 
