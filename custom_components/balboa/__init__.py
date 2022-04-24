@@ -16,7 +16,7 @@ from homeassistant.helpers.dispatcher import (
     async_dispatcher_send,
 )
 from homeassistant.helpers.entity import Entity
-from pybalboa import BalboaSpaWifi
+from .sundanceRS485 import SundanceRS485
 
 from .const import (
     _LOGGER,
@@ -58,7 +58,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     unsub = entry.add_update_listener(update_listener)
 
     _LOGGER.info("Attempting to connect to %s", host)
-    spa = BalboaSpaWifi(host)
+    spa = SundanceRS485(host)
     hass.data[DOMAIN][entry.entry_id] = {SPA: spa, UNSUB: unsub}
 
     connected = await spa.connect()
@@ -67,13 +67,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         raise ConfigEntryNotReady
 
     # send config requests, and then listen until we are configured.
-    await spa.send_mod_ident_req()
-    await spa.send_panel_req(0, 1)
+    #await spa.send_mod_ident_req()
+    #await spa.send_panel_req(0, 1)
     # configured = await spa.listen_until_configured()
 
     _LOGGER.info("Starting listener and monitor tasks.")
     hass.loop.create_task(spa.listen())
-    await spa.spa_configured()
+    #await spa.spa_configured()
     hass.loop.create_task(spa.check_connection_status())
 
     # At this point we have a configured spa.

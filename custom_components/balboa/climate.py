@@ -64,12 +64,12 @@ class BalboaSpaClimate(BalboaEntity, ClimateEntity):
     def hvac_mode(self) -> str:
         """Return the current HVAC mode."""
         mode = self._client.get_heatmode()
-        if mode == self._client.HEATMODE_READY:
-            return HVAC_MODE_HEAT
-        elif mode == self._client.HEATMODE_RNR:
-            return HVAC_MODE_AUTO
-        else:
-            return HVAC_MODE_OFF
+        #if mode == self._client.HEATMODE_READY:
+        return HVAC_MODE_HEAT
+        #elif mode == self._client.HEATMODE_RNR:
+        #    return HVAC_MODE_AUTO
+        #else:
+        #    return HVAC_MODE_OFF
 
     @property
     def hvac_action(self) -> str:
@@ -166,7 +166,7 @@ class BalboaSpaClimate(BalboaEntity, ClimateEntity):
         return self._client.get_heatmode(True)
 
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         """Return device specific state attributes."""
         return {
             "time": f"{self._client.time_hour:02d}:{self._client.time_minute:02d}",

@@ -5,7 +5,7 @@ import voluptuous as vol
 from homeassistant import config_entries, core, exceptions
 from homeassistant.const import CONF_HOST, CONF_NAME
 from homeassistant.core import callback
-from pybalboa import BalboaSpaWifi
+from .sundanceRS485 import SundanceRS485
 
 from .const import _LOGGER, CONF_SYNC_TIME, DOMAIN
 
@@ -21,7 +21,7 @@ async def validate_input(hass: core.HomeAssistant, data):
             raise AlreadyConfigured
 
     _LOGGER.debug("Attempting to connect to %s", data[CONF_HOST])
-    spa = BalboaSpaWifi(data[CONF_HOST])
+    spa = SundanceRS485(data[CONF_HOST])
     connected = await spa.connect()
     _LOGGER.debug("Got connected = %d", connected)
     if not connected:

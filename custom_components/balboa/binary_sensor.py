@@ -13,8 +13,8 @@ async def async_setup_entry(hass, entry, async_add_entities):
     spa = hass.data[DOMAIN][entry.entry_id][SPA]
     devs = []
 
-    devs.append(BalboaSpaBinarySensor(hass, entry, FILTER, 1))
-    devs.append(BalboaSpaBinarySensor(hass, entry, FILTER, 2))
+    #devs.append(BalboaSpaBinarySensor(hass, entry, FILTER, 1))
+    #devs.append(BalboaSpaBinarySensor(hass, entry, FILTER, 2))
 
     if spa.have_circ_pump():
         devs.append(BalboaSpaBinarySensor(hass, entry, CIRC_PUMP))

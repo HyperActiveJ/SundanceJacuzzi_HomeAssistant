@@ -13,7 +13,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     spa = hass.data[DOMAIN][entry.entry_id][SPA]
     devs = []
 
-    devs.append(BalboaSpaSwitch(hass, entry, TEMP_RANGE))
+    #devs.append(BalboaSpaSwitch(hass, entry, TEMP_RANGE))
     for num, value in enumerate(spa.light_array, 1):
         if value:
             devs.append(BalboaSpaSwitch(hass, entry, LIGHT, num))
@@ -45,10 +45,10 @@ class BalboaSpaSwitch(BalboaEntity, SwitchEntity):
                 GET_FUNCTION: self._client.get_mister,
                 CHANGE_FUNCTION: self._client.change_mister,
             },
-            TEMP_RANGE: {
-                GET_FUNCTION: self._client.get_temprange,
-                CHANGE_FUNCTION: self._client.change_temprange,
-            },
+            #TEMP_RANGE: {
+            #    GET_FUNCTION: self._client.get_temprange,
+            #    CHANGE_FUNCTION: self._client.change_temprange,
+            #},
         }
 
     @property
