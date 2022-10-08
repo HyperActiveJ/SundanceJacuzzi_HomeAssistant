@@ -2,7 +2,7 @@
 
 # Sundance Jaccuzi Spa Client integration for home-assistant
 Home assistant integration for a Sundance 780 series and other Jaccuzi products equipped w and a
-RS-485 to TCP COTS module.
+RS-485 to TCP COTS module such as elfin 11
 
 ## Configuration
 
