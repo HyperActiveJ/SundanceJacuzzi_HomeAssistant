@@ -10,7 +10,6 @@ TBD
 
 ## Screenshots
 
-![Screenshots](Screenshot_spa.png)
 
 ## Related Projects
 
