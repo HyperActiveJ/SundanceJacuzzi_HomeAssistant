@@ -1,3 +1,7 @@
+
+OBSOLETE - Switched to MQTT version - see other repository!
+
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 # Sundance Jaccuzi Spa Client integration for home-assistant
